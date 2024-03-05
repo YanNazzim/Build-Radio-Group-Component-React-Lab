@@ -12,22 +12,20 @@ export const RadioGroup = ({ onChange, selected, children }) => {
   return <div className="RadioGroup">{RadioOptions}</div>;
 };
 
-export const RadioOption = ({ value, checked, onChange, children }) => {
-  const handleChange = (e) => {
-    const newValueSelected = e.target.value;
-    onChange(newValueSelected);
-  };
-
-  return (
-    <div className="RadioOption">
-      <input
-        id={value}
-        type="radio"
-        name={value}
-        checked={checked}
-        onChange={handleChange}
-      />
-      <label htmlFor={value}>{children}</label>
-    </div>
-  );
-};
+export const RadioOption = ({ value, checked, onChange, children }) => { 
+  return ( 
+    <div className="RadioOption"> 
+      <input 
+        id={value} 
+        type="radio" 
+        name={value} 
+        value={value} 
+        checked={checked} 
+        onChange={(e) => { 
+          onChange(e.target.value); 
+        }} 
+      /> 
+      <label htmlFor={value}>{children}</label> 
+    </div> 
+  ); 
+ }; 
